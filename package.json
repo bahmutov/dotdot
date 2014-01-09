@@ -1,6 +1,6 @@
 {
   "name": "dotdot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Replaced foo..bar() with foo.bar.bind(foo) to shorten common JS syntax under node",
   "main": "index.js",
   "scripts": {
