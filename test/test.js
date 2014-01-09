@@ -1,5 +1,7 @@
 var dotdot = require('../index');
 var r = dotdot.r;
+var fs = require('fs');
+var path = require('path');
 
 // taken from lodash
 var objectTypes = {
@@ -69,4 +71,15 @@ gt.test('foo..bar() -> foo.bar.bind(foo)', function () {
 gt.test('foo..bar(10) -> foo.bar.bind(foo, 10)', function () {
   var replaced = dotdot('foo..bar(10)');
   gt.equal(replaced, 'foo.bar.bind(foo, 10)');
+});
+
+gt.module('e2e');
+
+gt.test('e2e source', function () {
+  var src = fs.readFileSync(path.join(__dirname, 'e2e.js'), 'utf-8');
+  gt.throws(function () {
+    eval(str);
+  }, 'Error', 'expected parser to choke on .. syntax');
+  var replaced = dotdot(src);
+  eval(replaced); // should be fine now
 });

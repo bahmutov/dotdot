@@ -1,10 +1,10 @@
 {
   "name": "dotdot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Replaced foo..bar() with foo.bar.bind(foo) to shorten common JS syntax under node",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/gt test/*.js --output"
+    "test": "node node_modules/gt test/test.js --output"
   },
   "repository": {
     "type": "git",
