@@ -10,7 +10,9 @@
     "type": "git",
     "url": "git@github.com:bahmutov/dotdot.git"
   },
-  "engines" : { "node" : "0.10.*" },
+  "engines": {
+    "node": "0.10.*"
+  },
   "keywords": [
     "node",
     "javascript",
@@ -26,5 +28,8 @@
   "homepage": "https://github.com/bahmutov/dotdot",
   "devDependencies": {
     "gt": "~0.8.21"
+  },
+  "dependencies": {
+    "check-types": "~1.1.1"
   }
 }
