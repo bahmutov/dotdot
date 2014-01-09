@@ -1,0 +1,30 @@
+{
+  "name": "dotdot",
+  "version": "0.0.0",
+  "description": "Replaced foo..bar() with foo.bar.bind(foo) to shorten common JS syntax under node",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/gt test/*.js --output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bahmutov/dotdot.git"
+  },
+  "engines" : { "node" : "0.10.*" },
+  "keywords": [
+    "node",
+    "javascript",
+    "bind",
+    "macro",
+    "shorten"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/dotdot/issues"
+  },
+  "homepage": "https://github.com/bahmutov/dotdot",
+  "devDependencies": {
+    "gt": "~0.8.21"
+  }
+}
