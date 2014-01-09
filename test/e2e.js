@@ -23,7 +23,7 @@ foobar = foo..bar();
 foobar();
 
 // function without an object
-function baz() {}
-baz();
-baz..()();
-baz..(10, 11)();
+function add(a, b) { return a + b; }
+console.assert(add(2, 3) === 5, '2+3 = 5');
+console.assert(add..(2)(3) === 5, '..2+3 = 5');
+console.assert(add..(10, 11)() === 21, '..10,11 = 21');
