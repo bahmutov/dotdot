@@ -13,6 +13,7 @@
   "engines": {
     "node": "0.10.*"
   },
+  "pre-commit": "npm test",
   "keywords": [
     "node",
     "javascript",
@@ -27,7 +28,8 @@
   },
   "homepage": "https://github.com/bahmutov/dotdot",
   "devDependencies": {
-    "gt": "~0.8.21"
+    "gt": "~0.8.21",
+    "pre-git": "0.0.14"
   },
   "dependencies": {
     "check-types": "~1.1.1"
