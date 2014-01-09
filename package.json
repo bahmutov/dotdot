@@ -4,7 +4,7 @@
   "description": "Replaced foo..bar() with foo.bar.bind(foo) to shorten common JS syntax under node",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/gt test/test.js --output && node test/e2e-caller.js"
+    "test": "node node_modules/gt test/test*.js --output && node test/e2e-caller.js"
   },
   "repository": {
     "type": "git",

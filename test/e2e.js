@@ -21,3 +21,8 @@ foobar();
 // do it again for fun
 foobar = foo..bar();
 foobar();
+
+// function without an object
+function baz() {}
+baz();
+var b = baz..();
