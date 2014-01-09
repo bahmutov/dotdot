@@ -54,6 +54,12 @@ gt.test('variables f100..bar(something)', function () {
   gt.equal(matches[2], 'bar', 'property');
 });
 
+gt.test('variables (f100..bar(', function () {
+  var matches = prop.exec('(f100..bar(');
+  gt.equal(matches[1], 'f100', 'reference');
+  gt.equal(matches[2], 'bar', 'property');
+});
+
 gt.module('testing foo..( detection');
 
 gt.test('dotdot regexp', function () {

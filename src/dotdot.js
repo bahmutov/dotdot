@@ -1,6 +1,6 @@
 // foo..bar() - binding object property
-var prop = /(\D\w+)\.\.(\D\w+)\(/;
-var fn = /(\D\w+)\.\.\(/;
+var prop = /([a-zA-Z]\w+)\.\.([a-zA-Z]\w+)\(/;
+var fn = /([a-zA-Z]\w+)\.\.\(/;
 
 // foo..bar() -> foo.bar.bind(foo)
 function replaceProp(str) {
