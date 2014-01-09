@@ -25,4 +25,5 @@ foobar();
 // function without an object
 function baz() {}
 baz();
-var b = baz..();
+baz..()();
+baz..(10, 11)();
