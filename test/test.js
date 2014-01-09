@@ -1,4 +1,4 @@
-var dotdot = require('../index');
+var dotdot = require('../src/dotdot');
 var r = dotdot.r;
 var fs = require('fs');
 var path = require('path');
