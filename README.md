@@ -92,11 +92,13 @@ asyncSquare(2)
 
 Author: Gleb Bahmutov &copy; 2013
 
+* [Changelog](History.md)
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
 * [blog](http://bahmutov.calepin.co/)
 
-License: MIT - do anything with the code, but don't blame me if it does not work.
+License: [MIT](MIT-license.md) - do anything with the code,
+but don't blame me if it does not work.
 
 Support: if you find any problems with this module, email / tweet / open issue on Github
 
