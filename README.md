@@ -52,6 +52,16 @@ npm install --save dotdot
 then require *dotdot* BEFORE any source files with `..` are required.
 The hook does NOT transform the file that loads `dotdot` itself, since it is too late.
 
+```js
+// index.js
+require('dotdot');
+require('./add');
+// add.js
+function add(a, b) { return a + b; }
+add..(2)(3) // 5
+add..(10, 11)() // 21
+```
+
 ## performance
 
 The source code transformation happens once per file, on the first `require` call.
