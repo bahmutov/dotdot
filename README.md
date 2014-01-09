@@ -10,6 +10,84 @@
 
 [![endorse][endorse-image]][endorse-url]
 
+*dotdot* installs a Node loader hook that transforms each loaded JavaScript file.
+
+```js
+var foo = {
+    n: 101,
+    print: function () {
+        console.log(n);
+    }
+};
+var printN = foo..print();
+printN();
+// becomes
+var foo = {
+    n: 101,
+    print: function () {
+        console.log(n);
+    }
+};
+var printN = foo.print.bind(foo);
+printN();
+// prints
+101
+```
+
+Both object properties and stand alone functions are supported, including arguments
+
+```js
+foo..bar('arg1', 'arg2')  //=> foo.bar.bind(foo, 'arg1', 'arg2')
+bar..(3, 'something') //=> bar.bind(null, 3, 'something')
+```
+
+for more examples see [test/e2e.js](test/e2e.js)
+
+## install and use
+
+```sh
+npm install --save dotdot
+```
+
+then require *dotdot* BEFORE any source files with `..` are required.
+The hook does NOT transform the file that loads `dotdot` itself, since it is too late.
+
+## performance
+
+The source code transformation happens once per file, on the first `require` call.
+The substitution itself is a simple RegExp execution, there is no abstract syntax tree,
+so it should be fast enough.
+
+Later I [plan](https://github.com/bahmutov/dotdot/issues/2) to support a
+filter function / option to limit substitution to
+certain files, for example to avoid transforming any source file loaded from `node_modules`
+folder.
+
+## why?
+
+I got tired of constantly writing `.bind(null, ...)`, especially in promise chains.
+I looked at using [sweet.js](http://sweetjs.org/) macros, but that project is still
+too fresh (most of their own examples did not work using v0.3.x), and too ambitious
+for this small change. Now my promise chains are much cleaner:
+
+```js
+// compare
+asyncSquare(2)
+.then(console.log.bind(null, '2 ='))
+.then(asyncSquare..(3))
+.then(console.log.bind(null, '3 ='))
+.then(asyncSquare..(4))
+.then(console.log.bind(null, '4 ='));
+
+// with
+asyncSquare(2)
+.then(console..log('2 ='))
+.then(asyncSquare..(3))
+.then(console..log('3 ='))
+.then(asyncSquare..(4))
+.then(console..log('4 ='));
+```
+
 ## Small print
 
 Author: Gleb Bahmutov &copy; 2013
