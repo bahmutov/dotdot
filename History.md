@@ -1,7 +1,9 @@
 
-0.1.0 / 2014-01-09
+0.1.1 / 2014-01-09
 ==================
 
+  * cleaner use example in readme
+  * better e2e tests
   * Added content to README
 
 
