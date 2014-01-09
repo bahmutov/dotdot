@@ -10,16 +10,17 @@
     "type": "git",
     "url": "git@github.com:bahmutov/dotdot.git"
   },
-  "engines": {
-    "node": "0.10.*"
-  },
   "pre-commit": "npm test",
   "keywords": [
     "node",
     "javascript",
     "bind",
     "macro",
-    "shorten"
+    "shorten",
+    "..",
+    "dotdot",
+    "loader",
+    "require"
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
