@@ -84,9 +84,9 @@ for this small change. Now my promise chains are much cleaner:
 // compare
 asyncSquare(2)
 .then(console.log.bind(null, '2 ='))
-.then(asyncSquare..(3))
+.then(asyncSquare.bind(null, 3))
 .then(console.log.bind(null, '3 ='))
-.then(asyncSquare..(4))
+.then(asyncSquare.bind(null, 4))
 .then(console.log.bind(null, '4 ='));
 
 // with
