@@ -62,6 +62,24 @@ add..(2)(3) // 5
 add..(10, 11)() // 21
 ```
 
+## Use with other tools
+
+Source that uses `..` is not valid JavaScript. To make sure existing tools,
+like jshint can parse it, I wrote [gulp-dotdot](https://github.com/bahmutov/gulp-dotdot)
+that does the transform.
+
+```js
+var gulp = require('gulp')
+var dotdot = require('gulp-dotdot');
+var jshint = require('gulp-jshint')
+gulp.task('lint', function() {
+  gulp.src('example.js')
+    .pipe(dotdot())
+    .pipe(jshint())
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+```
+
 ## performance
 
 The source code transformation happens once per file, on the first `require` call.
