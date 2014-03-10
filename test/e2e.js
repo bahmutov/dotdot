@@ -1,12 +1,15 @@
 var foo = {
   n: 101,
   bar: function() {
+    console.log('foo.bar');
     console.assert(this.n === 101, 'invalid value of n, this =', this);
   }
 };
 
 foo.bar();
+console.log('binding using function.bind');
 foo.bar.bind(foo)();
+console.log('bound');
 
 var foobar = foo.bar;
 try {
@@ -15,7 +18,9 @@ try {
   process.exit(-1);
 } catch (err) {};
 
+console.log('binding using .. syntax');
 foobar = foo..bar();
+console.log('trying the dotdot function');
 foobar();
 
 // do it again for fun
